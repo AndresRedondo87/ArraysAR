@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ArraysAR
@@ -47,6 +49,71 @@ namespace ArraysAR
             // Eigenschaften von Arrays, zB. Länge:
             Console.WriteLine("Länge des Arrays schulNotenVonDeutschStudenten: {0}", schulNotenVonDeutschStudenten.Length);
 
+
+
+
+            //-------------------------------------------------------------------------------foreach loops
+
+
+            string[] friends = { "Michael", "Wlad", "Ilja", "Andy", "Daniel" };
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(friends[i]);  //IndexOutOfRangeException!! Um sowas zu vvermeiden...
+            //}
+
+            //einfach bis die ganze Länge laufen lassen....
+            for (int i = 0; i < friends.Length; i++)
+            {
+                Console.WriteLine(friends[i]);  //IndexOutOfRangeException!!
+            }
+            Console.WriteLine($"friends.Length ist: {friends.Length}");
+
+
+            //Oder/ABER am Besten FOREACH, einfachere schreibweise und nutzliche Name dingens
+            // der Name dürfen wir selber entscheiden und damit arbeiten!!
+            // in foreach schuaen wir auch was für inhalt daraus wir kriegen wollen. 
+            foreach (string name in friends)
+            {
+                Console.WriteLine("Hallo {0}, mein Freund", name);
+            }
+            Console.WriteLine();
+
+            int[] nums = new int[15];
+
+            //ausfüllen
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i]=i+10; 
+            }
+
+            int counter = 0;
+            foreach (var item in nums)
+            {
+                Console.WriteLine($"Element {counter++} ist: {item}");
+            }
+
+
+            double summe = 0;
+            double[] zahlen = new double[] {5.298 , 6.589 , 958.5 , 4646.8, 9.9 , 6.589, 958.5, 4646.8, 9.9 , 6.589, 958.5, 4646.8, 9.9 , 6.589, 958.5, 4646.8, 9.9 };
+            foreach (double nummer in zahlen)
+            {
+                summe = summe + nummer;
+                //Console.WriteLine(summe);
+            }
+            Console.WriteLine($"Total Summe:{summe}");
+
+            // erstelle einen Array mit 5 deiner besten Freunde (die Namen)
+            // erstelle einen Foreach Loop um sie alle zu grüßen
+
+            string[] amigos = new string[] { "andres", "Pepe", "Federico", "Otroamigo", "Quintoamigo"};
+            foreach (string  name in amigos)
+            {
+                Console.WriteLine($"Hey, hola {name}!");
+            }
+
+
+            //-------------------------------------------------------------------------------foreach loops
 
             Console.ReadKey();
         }
