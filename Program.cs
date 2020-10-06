@@ -23,22 +23,30 @@ namespace ArraysAR
 
 
             // Aufpassen bei der Größe/Länge des Arrays
-            // FALSCH: schulNoten[5] = 2; - da der Array nur 5 Werte beinhalten kann.
+            // FALSCH: schulNoten[5] = 2; - da der Array nur 5 Werte beinhalten kann. INDEX OUT OF RANGE
 
 
             // Zugreifen auf einen Wert im Array
             Console.WriteLine("Die Note bei index 0 ist {0}", schulNoten[0]);
 
+            // Überschreiben ein Wert im Array
+            Console.WriteLine("Neuer Wert für erste Note überschreiben:");
             string input = Console.ReadLine();
             schulNoten[0] = int.Parse(input);
             Console.WriteLine("Die Note bei index 0 ist {0}", schulNoten[0]);
 
-            // weiterer Weg Arrays anzulegen
+
+            // weiterer Weg Arrays anzulegen (schon vorhandenen ints)
             int[] schulNotenVonMatheStudenten = { 1, 3, 2, 2, 5, 4, 4, 3 };
 
-            // weiterer Weg Arrays anzulegen
+            Console.WriteLine("Länge des Arrays schulNotenVonMatheStudenten: {0}", schulNotenVonMatheStudenten.Length);
+
+            // weiterer Weg Arrays anzulegen (aus neue Klasse, bzw unseren Klassen könnte man verwenden)
             int[] schulNotenVonDeutschStudenten = new int[] { 1, 3, 2, 2, 3, 2, 2, 2, 5, 6 };
-            Console.WriteLine("Länge des Arrays: {0}", schulNotenVonDeutschStudenten.Length);
+
+            // Eigenschaften von Arrays, zB. Länge:
+            Console.WriteLine("Länge des Arrays schulNotenVonDeutschStudenten: {0}", schulNotenVonDeutschStudenten.Length);
+
 
             Console.ReadKey();
         }
