@@ -115,6 +115,57 @@ namespace ArraysAR
 
             //-------------------------------------------------------------------------------foreach loops
 
+
+            //---------------------------------------------------------------------------------Multidimensionale Arrays 
+
+            {
+                Console.WriteLine("-----Multidimensionale Arrays: ");
+                // Deklarieren eines 2D Arrays
+                string[,] matrix;
+
+                // 3D Array
+                int[,,] threeD;
+
+                int[,] array2D = new int[,]
+                {
+                {1,2,3}, // Zeile 0
+                {4,5,6}, // Zeile 1
+                {7,8,9}  // Zeile 2
+                };
+
+                string[,,] array3D = new string[,,]
+                {
+                {
+                    {"000", "001"},
+                    {"010", "011"},
+                    {"Hi, Wie gehts", "Was geht ab?"}
+                },
+                {
+                    {"100", "101"},
+                    {"110", "111"},
+                    {"Noch mehr", "Denis"}
+                }
+                };
+
+                // Deklarieren eines 2D Arrays mit Initilisierung
+                string[,] array2DString = new String[3, 2]
+                {
+                {"eins", "zwei"},
+                {"drei", "vier"},
+                {"fünf", "sechs"}
+                };
+                // Überschreiben von Werten in einem Array2D
+                array2DString[1, 1] = "Hähnchen!";
+
+                Console.WriteLine("Anzahl der Dimensionen {0}", array2DString.Rank);
+
+                Console.WriteLine("Heute gibt es {0}", array2DString[1, 1]);
+            }
+            //---------------------------------------------------------------------------------Multidimensionale Arrays Ende
+
+
+
+
             Console.ReadKey();
         }
     }
